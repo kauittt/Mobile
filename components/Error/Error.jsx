@@ -1,22 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import styles from './style';
 
-const Error = () => {
-  const handleHide = () => {
-    Alert.alert('Test function', 'Lorem ipsum dolor sit amet.', [
-      {text: 'OK', onPress: () => console.log('OK Pressed')},
-    ]);
-  };
-
-  return (
+const Error = ({showOrHide, HandleonPress}) => {
+  return showOrHide ? (
     <View style={styles.container}>
       <View style={styles.content}>
-        <TouchableOpacity style={styles.icon} onPress={handleHide}>
+        <TouchableOpacity style={styles.icon} onPress={HandleonPress}>
           <Text>
-            <Icon name="times" size={30} />
+            <AntDesign name="closecircle" size={24} color={'black'} />
           </Text>
         </TouchableOpacity>
 
@@ -27,7 +21,7 @@ const Error = () => {
         </Text>
       </View>
     </View>
-  );
+  ) : null;
 };
 
 export default Error;

@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   section: {
     position: 'relative',
-    marginTop: 40,
+    marginTop: 15,
     paddingHorizontal: 12,
   },
   section__heading: {
